@@ -50,7 +50,18 @@ endfunction
 
 function	Created()
 	let Decor = "/*   Created: "
-	let Timedate = 
+	let Timedate =  strftime("%Y/%m/%d %H:%M;%S")
+	let Decor = Decor . Timedate
+	let Decor = Decor . " by "
+	let Name = system ($USER42)
+	let Decor = Decor . Name
+	let Lenght = strlen (Name)
+	let Space = 18 - Lenght
+	while Space > 0
+		let Decor = Decor . " "
+		let Space = Space - 1
+	endwhile
+	let Decor = Decor . "#+#    #+#             */"
 	call (7, Decor)
 endfunction
 
